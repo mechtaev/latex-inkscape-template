@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[DIV=12,BCOR=2mm,headinclude=true,footinclude=false]{typearea}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONTS SETUP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tocloft} % subfigure option only if using subfigure package
+\renewcommand{\cfttoctitlefont} % ToC title
+             {\usefont{T1}{qhv}{b}{n}\selectfont\huge}
+%% \renewcommand{\cftchapfont} % chapter titles
+%%              {\usefont{T1}{qhv}{b}{n}\selectfont}
+\renewcommand{\cftsecfont} % section titles
+             {\usefont{T1}{qhv}{m}{n}\selectfont}
+\renewcommand{\cftsubsecfont} % subsection titles
+             {\usefont{T1}{qhv}{m}{n}\selectfont} 
+%% \renewcommand{\cftchappagefont} % chapter page numbers
+%%              {\usefont{T1}{qhv}{b}{n}\selectfont}
+\renewcommand{\cftsecpagefont} % section page numbers
+             {\cftsecfont} 
+\renewcommand{\cftsubsecpagefont} % subsection page numbers
+             {\cftsubsecfont}
+
+\usepackage{sectsty}
+\allsectionsfont{\usefont{T1}{qhv}{b}{n}}
+
+\usepackage{mathrsfs}  % for mathsrc
+
+% bera mono
+\usepackage[scaled]{beramono} 
+
+\usepackage[T1]{fontenc}
+
+\usepackage{microtype}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{nicefrac}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+%\usepackage{fullpage}
+
+\usepackage{setspace}
+%\onehalfspacing
+%\singlespacing
+
+\usepackage{amsmath} % mathematics
+%% \usepackage{amssymb}
+\usepackage{amsthm}
+\newtheorem{mycriteria}{Criteria}
+\newtheorem{myproposition}{Proposition}
+\newtheorem{mytheorem}{Theorem}
+\newtheorem{mydefinition}{Definition}
+
+\usepackage{color} % colors
+\usepackage{soul} % hightlight text
+\definecolor{light-gray}{gray}{0.80}
+\sethlcolor{light-gray}
+
+% include graphs
+%\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
+
+% eps import:
+% \usepackage{epstopdf}
+
+% \usepackage{hyperref} % references
+\usepackage{listings} % listing
+\usepackage{syntax} % bnf
+
+%% \usepackage{epigraph}
+%% \setlength{\epigraphrule}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{caption}
+\captionsetup[lstlisting]{margin=0pt, font={sf}, labelformat=empty, labelsep=none}
+
+\begin{document}
+
+% listing settings:
+\lstset{
+language=C,
+xleftmargin=.3in,
+numbers=left,
+numberstyle=\color{light-gray}\texttt,
+basicstyle=\ttfamily}
+%\footnotesize}
+
+\onehalfspacing
+
+% here is title:
+% \title{Logical Methods for Program Repair\\[0.3cm] \Large{\emph{Graduate Research Paper}}}
+\title{\usefont{T1}{qhv}{b}{n} \LARGE {My \LaTeX\ template}}
+\author{\usefont{T1}{qhv}{m}{n} {Sergey Mechtaev} \\
+\usefont{T1}{qhv}{m}{n} {National University of Singapore}}
+\date{\usefont{T1}{qhv}{m}{n} {\today}}
+\maketitle
+
+%\doublespacing
+\onehalfspacing
+
+% \tableofcontents
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\begin{figure}[h]
+  \centering
+  \scalebox{1.0}{\input{fig.in}}
+\end{figure}
+
+\section*{Section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum~\cite{mechtaev2015directfix, mechtaev2016angelix}.
+
+% \clearpage
+\onehalfspacing
+\bibliographystyle{plain}
+\bibliography{lib}
+\end{document}
